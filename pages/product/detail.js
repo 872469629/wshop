@@ -64,6 +64,7 @@ Page({
             wsProdSkuList: res.data.wsProdSkuList,
             wsMemberCollectLogNum: res.data.wsMemberCollectLogNum,
             wsConsulationNum: res.data.wsConsulationNum,
+            WsProdSkuBaseAttrList: res.data.WsProdSkuBaseAttrList
           });
         } else {
           wx.showToast({

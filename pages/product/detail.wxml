@@ -77,9 +77,10 @@
   <!-- 产品评论 -->
   <swiper-item>
     <view class="p_all">
-        <block wx:for="{{wsConsulationList}}">
+        <block wx:for="{{WsProdSkuBaseAttrList}}">
               <view class="canshu df">
-              <view class="df_1 c3">{{item.consulationContent}}</view>
+              <view class="df_1 c3">{{item.attrbuteName}}</view>
+              <view class="df_1 c3" style='text-align:right'>{{item.attrbuteValueName}}</view>
             </view>
         </block>
     </view>
@@ -88,12 +89,11 @@
 </swiper>
 </view>
 <!---底部开始-->
-<view class="footfixed tc">
+<!-- <view class="footfixed tc">
   <view class="fl_l w40 font_12 hui03 df">
           <view class="df_1 l_h15 pt5 bre">
                   <image class="icon_kf" src="/images/kefu.png" style="margin-right:20px;"></image>
-                  <!-- <view class="dbtext" style="line;margin-top:5px">评论{{wsConsulationNum}}</view> -->
-                   <view class="dbtext" style="line;margin-top:5px">合计：</view> 
+                  <view class="dbtext" style="line;margin-top:5px">评论{{wsConsulationNum}}</view>
           </view>
             <view class="df_1 l_h15 pt5">
                  <view bindtap="addFavorites" >
@@ -105,5 +105,13 @@
   <view class="fl_l w60">
     <view class="w50 fl_l bg_cheng white" bindtap="setModalStatus" data-status="1">加入购物车</view>
     <view class="bg_red white w50 fl_l" bindtap="setModalStatus" data-status="2">立刻购买</view>
+  </view> -->
+  <view class='d-bottom'>
+    <view class='d-bottom-left'>
+      合计：<text style='color:#6db9b5'>{{wsProduct.defaultReallyPrice}}元</text>
+    </view>
+    <view class='d-bottom-right'>
+      <text class='goCart' bindtap="setModalStatus" data-status="1">加入购物车</text>
+      <text class='goPay' bindtap="setModalStatus" data-status="2">立即购买</text>
+    </view>
   </view>
-   </view>
