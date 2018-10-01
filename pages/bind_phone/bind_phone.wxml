@@ -1,0 +1,22 @@
+<!--pages/zc/zc.wxml-->
+<view>
+  <view class='zc-one'>
+    <image src='http://zq2.51wdxh.com/jt-img/exmr%20.png'></image>
+  </view>
+  <view class='zc-two'>
+    <view class='zc-two-box'>
+      <image src='http://zq2.51wdxh.com/jt-img/dh.png'></image>
+      <input type='text' placeholder='设置手机号' bindinput ="phonechange"></input>
+    </view>
+
+    <view class='zc-two-box'>
+      <image src='http://zq2.51wdxh.com/jt-img/yzm.png'></image>
+      <input type='text' placeholder='输入验证码' maxlength='6' style='width: 390rpx;' bindinput="quoteCode" ></input>
+      <button class='hq' bindtap="getcode">点击获取验证码</button>
+      <button class='disabled_text' hidden="{{countdown === 60}}">请稍后 {{countdown}} s</button>
+    </view>
+
+    <button class='btn' bindtap='bindPhone'>确认</button>
+
+  </view>
+</view>
