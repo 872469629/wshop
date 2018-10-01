@@ -1,31 +1,78 @@
-<!-- index.wxml -->
-<view class="page">
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
-      <swiper-item>
-        <image src="{{item.imgUrl}}" class="slide-image" width="100%" height="200"  />
-      </swiper-item>
-    </block>
-  </swiper>
-  
-    
-    <view class="cont">
-      <navigator class="pr" url="/pages/product/detail?productId={{item.id}}" hover-class="changestyle"
-                 wx:for="{{productData}}">
-        <image class="photo" src="{{item.prodImage}}"></image>
-        <view class="title">{{item.title}}</view>
-        <view style="display:flex;line-height:50rpx;padding:10rpx 0;">
-          <view class="gmxx" style="  color: red;">¥ {{item.defaultReallyPrice}}</view>
-          <view class="gmx">¥ {{item.defaultPrice}}</view>
-        </view>
-        <view style="display:flex;line-height:50rpx;color:#999">
-          <view class="gmxx" style="font-size:28rpx;width:30%">
-            <text wx:if="item.is_show==1">新品</text>
-            <text wx:elif="item.is_hot==1">热销</text>
-            <text wx:else>推荐</text>
-          </view>
-          <view class="ku" style="width:60%">销量：{{item.selNum}}</view>
-        </view>
-      </navigator>
+<!--pages/home/home.wxml-->
+<view>
+  <view class='banner'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item.imgUrl}}" class="slide-image" width="100%" height="200"  />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='home-box'>
+    <view class='home-box-box' bindtap='GoList'>
+      <image src='http://zq2.51wdxh.com/jt-img/hzp.png'></image>
+      <text>化妆品</text>
+    </view>
+
+    <view class='home-box-box' bindtap='GoList'>
+      <image src='http://zq2.51wdxh.com/jt-img/bjp.png'></image>
+      <text>保健品</text>
+    </view>
+
+    <view class='home-box-box' bindtap='GoList'>
+      <image src='http://zq2.51wdxh.com/jt-img/xhp.png'></image>
+      <text>洗护品</text>
     </view>
   </view>
+
+  <view class='home-box2'>
+    <view class='home-box2-1'>
+      <view class='zh-box' data-cur="dateDesc" bindtap='screen'>
+         <text wx:if="{{active=='dateDesc'||active=='dateAsc'}}" style='color:#6db9b5'>综合</text> 
+         <text wx:else>综合</text> 
+        <image wx:if="{{active=='dateDesc'}}" src='http://zq2.51wdxh.com/jt-img/x-1.png'></image>
+        <image wx:elif="{{active=='dateAsc'}}" src='http://zq2.51wdxh.com/jt-img/x-12.png'></image>
+        <image wx:else src='http://zq2.51wdxh.com/jt-img/x.png'></image>
+      </view>
+
+       <view class='zh-box' data-cur="salesDesc" bindtap='screen'>
+        <text wx:if="{{active=='salesDesc'||active=='salesAsc'}}" style='color:#6db9b5'>销量</text> 
+        <text wx:else>销量</text> 
+        <image wx:if="{{active=='salesDesc'}}" src='http://zq2.51wdxh.com/jt-img/x-1.png'></image>
+        <image wx:elif="{{active=='salesAsc'}}" src='http://zq2.51wdxh.com/jt-img/x-12.png'></image>
+        <image wx:else src='http://zq2.51wdxh.com/jt-img/x.png'></image>
+      </view>
+
+       <view class='zh-box' data-cur="priceDesc" bindtap='screen'>
+        <text wx:if="{{active=='priceDesc'||active=='priceAsc'}}" style='color:#6db9b5'>价格</text> 
+        <text wx:else>价格</text> 
+        <image wx:if="{{active=='priceDesc'}}" src='http://zq2.51wdxh.com/jt-img/x-1.png'></image>
+        <image wx:elif="{{active=='priceAsc'}}" src='http://zq2.51wdxh.com/jt-img/x-12.png'></image>
+        <image wx:else src='http://zq2.51wdxh.com/jt-img/x.png'></image>
+      </view>
+
+      <image class='y-image' src='http://zq2.51wdxh.com/jt-img/x2.png'></image>
+    </view>
+    
+    <navigator class="pr" url="/pages/product/detail?productId={{item.id}}" hover-class="changestyle" wx:for="{{productData}}">
+      <view class='home-box2-2' bindtap='GoDetails'>
+        <image class='image' src='{{item.prodImage}}'></image>
+        <view class='home-box'>
+          <view class='title-1'>
+            <text class='title'>{{item.title}}</text>
+          </view>
+          <view class='con-1'>
+            <text class='con'>{{item.note}}</text>
+          </view>
+          <view class='price-1'>
+            <text class='price'>{{item.defaultPrice}}元</text>
+          </view>
+          <view class='add-fx' catchtap='GoAdd'>
+            <navigator class="pr" url="/pages/toAgent/toAgent?productId={{item.id}}">成为分销商</navigator>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

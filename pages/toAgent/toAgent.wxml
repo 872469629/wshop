@@ -1,0 +1,8 @@
+<!--pages/add/add.wxml-->
+<view>
+  <view class='add-one'>
+    <text> 拿两箱面膜即成为代理商
+    两个月内需推荐一个代理商，否则取消代理资质</text>
+  </view>
+  <text class='add-two'>成为分销商</text>
+</view>

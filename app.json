@@ -14,7 +14,8 @@
     "pages/category/index",
     "pages/rituall/rituall",
     "pages/shop_store/shop_store",
-    "pages/bind_phone/bind_phone"
+    "pages/bind_phone/bind_phone",
+    "pages/toAgent/toAgent"
   ],
   "window": {
     "backgroundTextStyle": "light",
