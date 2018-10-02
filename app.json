@@ -15,7 +15,8 @@
     "pages/rituall/rituall",
     "pages/shop_store/shop_store",
     "pages/bind_phone/bind_phone",
-    "pages/toAgent/toAgent"
+    "pages/toAgent/toAgent",
+    "pages/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

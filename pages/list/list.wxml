@@ -1,0 +1,32 @@
+<!--pages/list/list.wxml-->
+<view class='home-box2'>
+    <view class='home-box2-1'>
+      <text style='color:#6db9b5'>综合</text>
+      <text>销量</text>
+      <text>价格</text>
+    </view>
+
+    <block wx:for="{{wsProductList}}" wx:key="*this" data-id="{{item.id}}">
+      <navigator url="/pages/detalis/detalis?productId={{item.id}}">
+        <view class='home-box2-2'>
+          <image class='image' src='{{item.prodImage}}'></image>
+          <view class='home-box'>
+            <view class='title-1'>
+              <text class='title'>{{item.pnname}}</text>
+            </view>
+            <view class='con-1'>
+              <text class='con'>{{item.title}}</text>
+            </view>
+            <view class='price-1'>
+              <text class='price'>{{item.defaultReallyPrice}}元</text>
+            </view>
+
+            <view class='add-fx' bindtap='GoAdd'>
+              <text>成为分销商</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+
+  </view>

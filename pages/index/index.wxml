@@ -11,20 +11,21 @@
   </view>
   <view class='home-box'>
     <view class='home-box-box' bindtap='GoList'>
-      <image src='http://zq2.51wdxh.com/jt-img/hzp.png'></image>
+      <navigator url="../list/list?catId=52ac3cda0a344d9184e8e7246396eb95&title=化妆品"><image src='http://zq2.51wdxh.com/jt-img/hzp.png'></image></navigator>
       <text>化妆品</text>
     </view>
 
     <view class='home-box-box' bindtap='GoList'>
-      <image src='http://zq2.51wdxh.com/jt-img/bjp.png'></image>
+      <navigator url="../list/list?catId=c229c35ed3f8454aa2ef7870f7ba4fa0&title=保健品"><image src='http://zq2.51wdxh.com/jt-img/bjp.png'></image></navigator>
       <text>保健品</text>
     </view>
 
     <view class='home-box-box' bindtap='GoList'>
-      <image src='http://zq2.51wdxh.com/jt-img/xhp.png'></image>
+      <navigator url="../list/list?catId=21f4f61e69dd401b8cec62f5877f3b56&title=洗护品"><image src='http://zq2.51wdxh.com/jt-img/xhp.png'></image></navigator>
       <text>洗护品</text>
     </view>
   </view>
+
 
   <view class='home-box2'>
     <view class='home-box2-1'>

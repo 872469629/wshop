@@ -147,18 +147,6 @@ Page( {
       phoneNumber: this.data.tel //仅为示例，并非真实的电话号码
     })
   },
-  onShareAppMessage: function () {
-    return {
-      title: config.shareTitle,
-      path: '/pages/index/index',
-      success: function (res) {
-        // 分享成功
-      },
-      fail: function (res) {
-        // 分享失败
-      }
-    }
-  },
   toBindPhone:function(e){
     console.log("")
     var member = this.data.member

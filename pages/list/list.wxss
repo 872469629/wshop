@@ -1,0 +1,81 @@
+.home-box-box{
+  width: 33%;
+  margin-bottom:20rpx soild #f6f5f5;
+  float: left
+  
+}
+.home-box-box image{
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: auto;
+  padding-top: 25rpx
+}
+.home-box-box text{
+  text-align: center;
+  display: block;
+  font-size: 30rpx;
+  padding-top: 15rpx
+}
+.home-box2{
+  width: 100%;
+  /* height: 400rpx; */
+  border-top: 10px solid #f6f5f5
+}
+.home-box2-1{
+ width: 100%;
+ height: 100rpx;
+ border-bottom: 1px solid #f6f5f5;
+ display: flex;
+ align-items: center
+ 
+}
+.home-box2-1 text{
+  float: left;
+  width: 150rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+.home-box2-2{
+  width: 100%;
+  height: 290rpx;
+  border-bottom: 1px solid #f6f5f5;
+}
+.image{
+  width: 300rpx;
+  height: 220rpx;
+  float: left;
+  margin: 30rpx 20rpx
+}
+.title-1{
+  padding-top: 20rpx
+}
+.title{
+  font-size: 35rpx;
+  margin-top: 20rpx
+}
+.con-1{
+  padding-bottom: 50rpx
+}
+.con{
+  color: #b4b4b4;
+ font-size: 30rpx;
+}
+.price{
+  color: #6db9b5;
+  font-size: 20px;
+  float: left
+}
+.add-fx{
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 25rpx;
+  text-align: center;
+  float: right;
+  background: #ededed;
+  display: block;
+  border-radius: 10rpx;
+  color: #df817c;
+  margin-right: 20rpx
+}
