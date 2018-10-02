@@ -25,6 +25,8 @@ Page({
     //准备数据
     wsProduct:{},
     WsProdSkuBaseAttrList: [],
+    baseAttributes:[],
+    saleAttributes:[],
     wsProdSkuList: [],
     wsConsulationNum:0,
     wsMemberCollectLogNum:0,
@@ -64,8 +66,11 @@ Page({
             wsProdSkuList: res.data.wsProdSkuList,
             wsMemberCollectLogNum: res.data.wsMemberCollectLogNum,
             wsConsulationNum: res.data.wsConsulationNum,
-            WsProdSkuBaseAttrList: res.data.WsProdSkuBaseAttrList
+            WsProdSkuBaseAttrList: res.data.WsProdSkuBaseAttrList,
+            baseAttributes: res.data.baseAttributes,
+            saleAttributes: res.data.saleAttributes
           });
+          that.selectSku()
         } else {
           wx.showToast({
             title: res.data.err,
@@ -102,6 +107,40 @@ Page({
     this.setData({
       currentSkuId: e.currentTarget.dataset.id,
     })
+  },
+  chooseSkuBox: function (e) {
+    var attrbuteId = e.currentTarget.dataset.id
+    var attrbuteValue = e.currentTarget.dataset.value
+    console.log("attrbuteId:",attrbuteId)
+    console.log("attrbuteValue:", attrbuteValue)
+    
+    var saleAttributes = this.data.saleAttributes
+    
+    if (saleAttributes){
+      for (var i = 0; i < saleAttributes.length; i++) {
+        if (attrbuteId == saleAttributes[i].attrbuteId){
+          
+            for (var j = 0; j < saleAttributes[i].valueAttrbutes.length; j++) {
+              
+              saleAttributes[i].valueAttrbutes[j].selected = false
+              if (saleAttributes[i].valueAttrbutes[j].attrbuteValue) {
+                if (saleAttributes[i].valueAttrbutes[j].attrbuteValue == attrbuteValue){
+                  saleAttributes[i].valueAttrbutes[j].selected = true
+                }
+                
+              } else {
+                if (!attrbuteValue) {
+                  saleAttributes[i].valueAttrbutes[j].selected = true
+                }
+              }
+            }
+        }
+      }
+    }
+    this.setData({
+      saleAttributes: saleAttributes
+    })
+    this.selectSku()
   },
   //添加到收藏
   addFavorites: function (e) {
@@ -274,5 +313,48 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
+  },
+  selectSku:function(){
+    var wsProdSkuList = this.data.wsProdSkuList
+    var saleAttributes = this.data.saleAttributes
+    var valueList = []
+    if (saleAttributes){
+      for (var i = 0; i < saleAttributes.length;i++){
+        if (saleAttributes[i].valueAttrbutes){
+          for (var j = 0; j < saleAttributes[i].valueAttrbutes.length; j++) {
+            if (saleAttributes[i].valueAttrbutes[j].selected){
+              if (saleAttributes[i].valueAttrbutes[j].attrbuteValue) {//有可能没有attrbuteValue，则用空字符串代替
+                valueList.push(saleAttributes[i].valueAttrbutes[j].attrbuteValue)
+              }else{
+                valueList.push("")
+              }
+              
+            }
+          }
+        }
+      }
+    }
+    //属性值
+    var valus = "";
+    for (var i = 0; i < valueList.length; i++) {
+      if(i==0){
+        valus += valueList[i]
+      }else{
+        valus += ","+valueList[i]
+      }
+    }
+    
+    //再跟sku集合里的attrivalueValues匹对
+    if (wsProdSkuList){
+      for (var i = 0; i < wsProdSkuList.length; i++) {
+        if (wsProdSkuList[i].attrivalueValues == valus){
+          this.setData({
+            currentSkuId: wsProdSkuList[i].id
+          })
+        }
+      }
+    }
+    console.log("所选sku：", this.data.currentSkuId)
+
   }
 });

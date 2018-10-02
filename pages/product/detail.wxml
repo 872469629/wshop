@@ -22,13 +22,24 @@
 
 <view class="commodity_attr_list">
 
-    <view class="p_all">
+     <!-- <view class="p_all">
         <block wx:for="{{wsProdSkuList}}">
             <view class="canshu df {{currentSkuId==item.id?'selectBox':''}}" bindtap="selectSkuBox" data-id="{{item.id}}">
               <view class="df_1 c3" >{{item.skuName}}</view>
             </view>
         </block>
+    </view>  -->
+  <view class='{{index==0?"d-box":"d-xh"}}' wx:for="{{saleAttributes}}">
+    <view class='d-box-one' wx:if="{{index==0}}">请选择商品规格尺寸</view>
+    <view class='d-box-1'>
+      <view class='d-box-1-c'>{{item.attrbuteName}}</view>
+      <view class='d-box-1-box'>
+        <text class='{{p.selected?"t2":"t1"}}' wx:for="{{item.valueAttrbutes}}" wx:for-item="p" data-value="{{p.attrbuteValue}}" data-id="{{item.attrbuteId}}" catchtap='chooseSkuBox'>{{p.attrbuteValueName}}</text>
+        <!-- <text class='t2'>白色</text> -->
+      </view>
     </view>
+  </view>
+  
 </view>
     <view class="shu">
         <text class="cun">购买数量</text>
@@ -57,7 +68,6 @@
 <view>
 <view class="swiper-tab">
   <view class="bre swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">图文详情</view>
-  <!-- <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">产品评论{{wsConsulationNum}}</view> -->
    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">商品参数</view> 
 </view>
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
@@ -77,10 +87,10 @@
   <!-- 产品评论 -->
   <swiper-item>
     <view class="p_all">
-        <block wx:for="{{WsProdSkuBaseAttrList}}">
+        <block wx:for="{{baseAttributes}}">
               <view class="canshu df">
-              <view class="df_1 c3">{{item.attrbuteName}}</view>
-              <view class="df_1 c3" style='text-align:right'>{{item.attrbuteValueName}}</view>
+              <view class="df_1 c3" style='text-align:left'>{{item.attrbuteName}}</view>
+              <view class="df_1 c3" style='text-align:left'>{{item.attrbuteValueName}}</view>
             </view>
         </block>
     </view>
@@ -88,24 +98,6 @@
 
 </swiper>
 </view>
-<!---底部开始-->
-<!-- <view class="footfixed tc">
-  <view class="fl_l w40 font_12 hui03 df">
-          <view class="df_1 l_h15 pt5 bre">
-                  <image class="icon_kf" src="/images/kefu.png" style="margin-right:20px;"></image>
-                  <view class="dbtext" style="line;margin-top:5px">评论{{wsConsulationNum}}</view>
-          </view>
-            <view class="df_1 l_h15 pt5">
-                 <view bindtap="addFavorites" >
-                    <image class="icon_kf" src="/images/shc.png" ></image>
-                    <view bindtap="addFavorites" class="dbtext">收藏{{wsMemberCollectLogNum}}</view>
-              </view>
-     </view>
-  </view>
-  <view class="fl_l w60">
-    <view class="w50 fl_l bg_cheng white" bindtap="setModalStatus" data-status="1">加入购物车</view>
-    <view class="bg_red white w50 fl_l" bindtap="setModalStatus" data-status="2">立刻购买</view>
-  </view> -->
   <view class='d-bottom'>
     <view class='d-bottom-left'>
       合计：<text style='color:#6db9b5'>{{wsProduct.defaultReallyPrice}}元</text>

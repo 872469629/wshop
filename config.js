@@ -1,8 +1,8 @@
 /**
  * 小程序配置文件
  */
-var host = "http://w.51wdxh.com/wx"
-// var host = "http://127.0.0.1:9090/wshop/wx"
+// var host = "http://w.51wdxh.com/wx"
+var host = "http://127.0.0.1:9090/wshop/wx"
 
 var config = {
 
