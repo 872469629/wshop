@@ -1,3 +1,4 @@
+const config = require("../config.js");
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -17,7 +18,9 @@ function formatNumber(n) {
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  toBeFromUser: toBeFromUser
+  
 }
 
 function checkStringEmpty(data){
@@ -25,4 +28,23 @@ function checkStringEmpty(data){
     return false;
   }
   return true;
+}
+function toBeFromUser(userId,fromUserId){
+  wx.request({
+    url: config.toBeFromUser,
+    method: 'post',
+    data: { userId: userId, fromUserId: fromUserId },
+    header: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    success: function (res) {
+
+    },
+    fail: function (e) {
+      wx.showToast({
+        title: '网络异常！',
+        duration: 2000
+      });
+    },
+  })
 }

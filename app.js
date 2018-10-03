@@ -118,12 +118,14 @@ App({
   },
 
  globalData:{
-    userInfo:null
+    userInfo:null,
+    fromUserId:null
   },
 
   onPullDownRefresh: function (){
     wx.stopPullDownRefresh();
-  }
+  },
+  util: require('utils/util.js'),
 
 });
 

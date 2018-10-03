@@ -79,6 +79,8 @@ var config = {
   bindPhone: host + '/usercenter/bindPhone',
   //获取首页商品
   indexProds: host + '/index/prods',
+  //成为分享者的下限
+  toBeFromUser: host + '/usercenter/toBeFromUser',
 };
 
 module.exports = config

@@ -26,6 +26,17 @@ Page({
     app.getUserInfo(function () {
       that.init();
     });
+    var fromUserId = options.fromUserId    
+    if (fromUserId){
+      app.globalData.fromUserId = fromUserId
+      //如果我在登录中就要成为该用户的下限
+      app.getUserInfo(function () {
+        if (app.globalData.userInfo && app.globalData.userInfo.id) {
+          app.util.toBeFromUser(app.globalData.userInfo.id, fromUserId)
+        }
+      });
+      
+    }
   },
   init: function () {
     var that = this
@@ -105,9 +116,14 @@ Page({
   },
 
   onShareAppMessage: function () {
+    var userId = app.globalData.userInfo.id
+    var path = '/pages/home/home'
+    if(userId){
+      path += '?fromUserId=' + userId
+    }
     return {
       title: config.shareTitle,
-      path: '/pages/home/home',
+      path: path,
       success: function (res) {
         // 分享成功
       },
