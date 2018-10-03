@@ -177,7 +177,10 @@ Page({
         if (data.ret == 1) {
           wx.showToast({
             title: data.msg,
-            duration: 2000
+            duration: 2000,
+            success: function () {
+              wx.navigateBack({})
+             },
           });
 
         } else {
