@@ -166,7 +166,6 @@ Page({
       data: {
         phone: phone,
         code: yzCode,
-        user_id: "06b7407429424c8b9ed2e43170d2a67d"
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
