@@ -1,5 +1,6 @@
 // pages/zc/zc.js
 const config = require("../../config.js");
+var app = getApp();
 var cookie = ''
 Page({
 
@@ -166,6 +167,7 @@ Page({
       data: {
         phone: phone,
         code: yzCode,
+        user_id: app.globalData.userInfo.id
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
