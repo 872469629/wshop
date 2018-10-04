@@ -100,7 +100,7 @@
 </view>
   <view class='d-bottom'>
     <view class='d-bottom-left'>
-      合计：<text style='color:#6db9b5'>{{wsProduct.defaultReallyPrice}}元</text>
+      合计：<text style='color:#6db9b5'>{{amount}}元</text>
     </view>
     <view class='d-bottom-right'>
       <text class='goCart' bindtap="setModalStatus" data-status="1">加入购物车</text>

@@ -30,6 +30,7 @@ Page({
     wsProdSkuList: [],
     wsConsulationNum:0,
     wsMemberCollectLogNum:0,
+    amount:0
   },
   // 传值
   onLoad: function (option) {
@@ -68,7 +69,8 @@ Page({
             wsConsulationNum: res.data.wsConsulationNum,
             WsProdSkuBaseAttrList: res.data.WsProdSkuBaseAttrList,
             baseAttributes: res.data.baseAttributes,
-            saleAttributes: res.data.saleAttributes
+            saleAttributes: res.data.saleAttributes,
+            amount: wsProduct.defaultReallyPrice
           });
           that.selectSku()
         } else {
@@ -102,6 +104,10 @@ Page({
         buynum: this.data.buynum + 1
       })
     };
+    this.setData({
+      amount: this.data.buynum * this.data.wsProduct.defaultReallyPrice
+    })
+    
   },
   selectSkuBox: function (e) {
     this.setData({
