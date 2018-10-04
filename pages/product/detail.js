@@ -252,6 +252,7 @@ Page({
               icon: 'success',
               duration: 2000
             });
+            that.cartAmount();
         } else {
           wx.showToast({
             title: data.msg,
@@ -267,7 +268,7 @@ Page({
         });
       }
     });
-    that.cartAmount();
+    
   },
   buyProd: function (e) { //添加到购物车
     var that = this;
