@@ -82,6 +82,9 @@ var config = {
   indexProds: host + '/index/prods',
   //成为分享者的下限
   toBeFromUser: host + '/usercenter/toBeFromUser',
+  //购物车总额
+  cartAmount: host + '/cart/cartAmount',
+  
 };
 
 module.exports = config

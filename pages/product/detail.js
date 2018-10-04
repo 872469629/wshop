@@ -39,7 +39,43 @@ Page({
       productId: option.productId,
     });
     that.loadProductDetail();
+    that.cartAmount();
+    
 
+  },
+  cartAmount:function(){
+    var that = this
+    wx.request({
+      url: config.cartAmount,
+      method: 'post',
+      data: {
+        user_id: app.globalData.userInfo.id,
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        //--init data 
+        var status = res.data.ret;
+        if (status == 1) {
+          var cartAmount = res.data.cartAmount;
+          that.setData({
+            cartAmount: cartAmount
+          })
+        } else {
+          wx.showToast({
+            title: res.data.err,
+            duration: 2000,
+          });
+        }
+      },
+      error: function (e) {
+        wx.showToast({
+          title: '网络异常！',
+          duration: 2000,
+        });
+      },
+    });
   },
   // 商品详情数据获取
   loadProductDetail: function () {
@@ -231,6 +267,7 @@ Page({
         });
       }
     });
+    that.cartAmount();
   },
   buyProd: function (e) { //添加到购物车
     var that = this;
