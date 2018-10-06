@@ -1,0 +1,76 @@
+<view class='fx'>
+  <view class='fx-1'>
+    <image class='fx-1-img' src='http://zq2.51wdxh.com/jt-img/bj.png'></image>
+    <view class='fx-1-box'>
+      <image src='{{member.headimgurl}}'></image>
+      <text class='name'>{{member.nickname}}</text>
+      <!-- <text class='id'>ID:125623</text> -->
+      <!-- <text class='dengji'>三级</text> -->
+      <text class='id' wx:if="{{member && member.agentParent}}">邀请码：{{member.agentParent.mobile}}</text> 
+    </view>
+    <view class='fx-1-box2'>
+      <text wx:if="{{member && member.agentParent}}">邀请人：{{member.agentParent.nickname}}</text>
+       <!-- <text>邀请吗：33415</text>  -->
+    </view>
+    <view class='yq'>我的佣金：￥{{member.balance}}</view>
+    <text class='tx'  bindtap='Txian'>申请提现</text>
+  </view>
+
+  <view class='fx-2'>
+    <view class='fx-2-list' bindtap='GoTx'>
+      <text class='left'>
+        <text>提现申请</text>
+      </text>
+      <image class='right' src='http://zq2.51wdxh.com/jt-img/jt.png'></image>
+    </view>
+
+     <view class='fx-2-list' bindtap='GoFxd'>
+      <text class='left'>
+        <text>分销订单</text>
+      </text>
+      <image class='right' src='http://zq2.51wdxh.com/jt-img/jt.png'></image>
+    </view>
+
+    <view class='fx-2-list' bindtap='GoPush'>
+      <text class='left' >
+        <text>推荐代理商返佣</text>
+      </text>
+      <image class='right' src='http://zq2.51wdxh.com/jt-img/jt.png'></image>
+    </view>
+
+    <view class='fx-2-list' bindtap='GoBonus'>
+      <text class='left'>
+        <text>代理商消费返佣</text>
+      </text>
+      <image class='right' src='http://zq2.51wdxh.com/jt-img/jt.png'></image>
+    </view>
+
+
+    <view class='fx-2-list' bindtap='GoTeam'>
+      <text class='left'>
+        <text>我的团队</text>
+      </text>
+      <image class='right' src='http://zq2.51wdxh.com/jt-img/jt.png'></image>
+    </view>
+
+    <!-- <view class='fx-2-list' bindtap='GoHhr'>
+      <text class='left'>
+        <text>我的合伙人</text>
+      </text>
+      <image class='right' src='http://zq2.51wdxh.com/jt-img/jt.png'></image>
+    </view> -->
+  </view>
+</view>
+
+
+<view id='tc'  hidden="{{hiddenName}}" >
+  <view class='tc'>
+    <text>提现</text>
+    <view class='tc-box'>
+      <input  placeholder='提现金额'></input>
+      <button catchtap='qdtx'>确认提现</button>
+    </view>
+    
+  </view>
+  <view class='x' bindtap='out'>×</view>
+</view>

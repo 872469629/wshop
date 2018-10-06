@@ -81,9 +81,11 @@ var config = {
   //获取首页商品
   indexProds: host + '/index/prods',
   //成为分享者的下限
-  toBeFromUser: host + '/usercenter/toBeFromUser',
+  toBeFromUser: host + '/commission/toBeFromUser',
   //购物车总额
   cartAmount: host + '/cart/cartAmount',
+  //我的团队
+  myGroup: host + '/commission/myGroup',
   
 };
 

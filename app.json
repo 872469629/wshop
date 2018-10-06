@@ -16,7 +16,9 @@
     "pages/shop_store/shop_store",
     "pages/bind_phone/bind_phone",
     "pages/toAgent/toAgent",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/fx/fx",
+    "pages/team/team"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -41,6 +43,12 @@
         "iconPath": "images/icons/btn-tabs_03.png",
         "selectedIconPath": "images/icons/btn-tabs_08.png",
         "text": "分类"
+      },
+      {
+        "selectedIconPath": "images/xz-12.png",
+        "iconPath": "images/fx-d.png",
+        "pagePath": "pages/fx/fx",
+        "text": "分销"
       },
       {
         "pagePath": "pages/cart/cart",

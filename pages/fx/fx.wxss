@@ -1,0 +1,166 @@
+page{
+  background: #f6f5f5
+}
+.fx{
+  width: 95%;
+  margin: 20rpx auto;
+}
+.fx-1{
+  width: 100%;
+  height: 350rpx;
+  position: relative
+}
+.fx-1-img{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.fx-1-box image{
+  width: 130rpx;
+  height: 130rpx;
+  position: absolute;
+  top: 40rpx;
+  float: left;
+  left: 20rpx
+}
+.fx-1-box2{
+  position: absolute;
+  top: 50rpx;
+  float: left;
+  right: 20rpx;
+  display: flex;
+  flex-direction: column
+}
+.fx-1-box2 text{
+  color: white;
+  font-size: 30rpx
+}
+.name{
+  color: white;
+  position: absolute;
+  top: 50rpx;
+  left: 170rpx;
+  font-size: 30rpx
+}
+.id{
+  color: white;
+  position: absolute;
+  top: 100rpx;
+  left: 170rpx;
+  font-size: 30rpx
+}
+.dengji{
+  color: white;
+  position: absolute;
+  top: 140rpx;
+  left: 170rpx;
+  font-size: 30rpx
+}
+
+.yq{
+  color: white;
+  position: absolute;
+  top: 250rpx;
+  left: 30rpx;
+  font-size: 35rpx
+}
+.tx{
+  position: absolute;
+  top: 245rpx;
+  right:30rpx;
+  font-size: 13px;
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: block;
+  background: white;
+  color: #6db9b5;
+  border-radius: 3px;
+  text-align: center
+}
+
+.fx-2{
+  width: 97%;
+  margin: auto;
+  background: white
+}
+.fx-2-list{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1px solid #f6f5f5;
+}
+.left{
+}
+.left text{
+  font-size: 35rpx;
+  line-height: 100rpx;
+  text-indent: 30rpx;
+  display: block;
+  float: left
+}
+.right{
+  width: 20px;
+  height: 15px;
+  float: right;
+  margin: 35rpx 30rpx;
+}
+
+#tc{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.tc{
+  width: 96%;
+  height: 280rpx;
+  background: white;
+  position: absolute;
+  top: 250rpx;
+  left: 15rpx;
+  display: block;
+  border-radius: 10rpx
+}
+.tc text{
+  text-align: center;
+  display: block;
+  font-size: 35rpx;
+  padding-top: 20rpx;
+  padding-bottom: 50rpx;
+  color: #575757
+}
+.tc-box input{
+  width: 400rpx;
+  height: 90rpx;
+  background: #f7f5f6;
+  float: left;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  margin-left: 35rpx
+}
+.tc-box button{
+  width: 200rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #5d91e2;
+  color: white;
+  font-size: 30rpx;
+}
+.x{
+  position: absolute;
+  top: 540rpx;
+  left: 340rpx;
+  font-size: 60rpx;
+  border:2px solid white;
+  display: block;
+  width: 70rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 65rpx;
+  border-radius: 50%;
+  color: white;
+  margin: auto
+}

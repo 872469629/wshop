@@ -1,0 +1,31 @@
+<!--pages/time/time.wxml-->
+<view>
+  <view class='team-one'>
+    <text class='cj'>销售总成绩</text>
+    <text class='pr'>￥3000000.00</text>
+  </view>
+  <view class='team-two'>
+    <view class='one'>
+      <text class='left'>团队成员</text>
+      <view class='right'>
+        <text class="{{active == 1 ?'on':''}}" data-active="1" bindtap='qh'>一级</text>
+        <text class="{{active == 2 ?'on':''}}" data-active="2" bindtap='qh'>二级</text>
+        <text class="{{active == 3 ?'on':''}}" data-active="3" bindtap='qh'>三级</text>
+      </view>
+    </view>
+    <view class='two'>
+      <view>
+        <view class='two-box'>
+          <view class='two-box-box'  wx:for="{{nextGroup}}">
+
+            <image src='{{item.headimgurl}}'></image>
+            <text>{{item.nickname}}</text>
+
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
