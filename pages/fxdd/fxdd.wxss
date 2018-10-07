@@ -1,0 +1,176 @@
+/* pages/fxdd/fxdd.wxss */
+page{
+  background: #f6f4f4;
+  
+}
+.one{
+  width: 100%;
+  height: 100rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eaeaea;
+  background: white;
+  color: #9c9c9c
+}
+.one text{
+  font-size: 32rpx;
+  text-align: center;
+  display: block;
+  float: left;
+  margin-left: 22rpx;
+}
+.order-two{
+  width: 100%;
+  min-height: 410rpx;
+  border-bottom: 1px solid #f6f5f5;
+  background: white
+}
+.order-two-box{
+  width: 100%;
+  height: 230rpx;
+}
+.left{
+  width: 280rpx;
+  height: 180rpx;
+  float: left;
+  margin-right: 10rpx;
+  margin-left: 30rpx;
+  padding-top: 21rpx
+}
+.left image{
+  width: 100%;
+  height: 100%
+}
+.right{
+  padding-top: 21rpx
+}
+.title{
+  display: block;
+  font-size: 35rpx
+}
+.con{
+   display: block;
+  font-size: 25rpx;
+  color: #b8b8b8;
+  margin-bottom: 40rpx
+}
+.price{
+  float: left;
+  display: block;
+  color: #6cb8b5;
+  font-size: 37rpx
+}
+.value{
+  float: right;
+  display: block;
+  margin-right: 20rpx;
+  font-size: 30rpx
+}
+.bottom{
+  border-top: 1px solid #f6f5f5;
+  position: relative;
+}
+.bottom-1{
+  width: 450rpx;
+  font-size: 26rpx;
+  display: block;
+  margin-right: 10rpx;
+  margin-bottom: 20rpx;
+  text-align: right;
+  float: right;
+  padding-top: 25rpx;
+  
+}
+.bottom-1 text{
+
+}
+.bottom-2{
+  font-size: 26rpx;
+  float: right;
+  margin-right: 10rpx;
+  position: absolute;
+  right: 0;
+  top: 85rpx
+}
+.qx{
+  width: 180rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  border: 1px solid #b8b8b8;
+  color: #b8b8b8;
+  display: block;
+  text-align: center;
+  border-radius: 30rpx;
+  float: left;
+  margin-right: 10rpx
+}
+.pay{
+  width: 160rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  border: 1px solid #f19091;
+  color: #f19091;
+  display: block;
+  text-align: center;
+  border-radius: 30rpx;
+  float: left
+}
+.wfk{
+  width: 160rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  border: 1px solid #9c9c9c;
+  color: #9c9c9c;
+  display: block;
+  text-align: center;
+  border-radius: 30rpx;
+  float: left
+}
+.bottom-3{
+  position: absolute;
+  float: left;
+  top: 25rpx
+}
+.bottom-3-image{
+  float: left;
+  border-radius: 50%
+}
+.bottom-3-image image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  margin-left: 26rpx;
+  margin-top: 0rpx;
+}
+.bottom-3-box{
+  width: 300rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #9f9f9f;
+  font-size: 27rpx;
+  margin-top: 0rpx
+}
+.t1{
+  
+}
+.t2{
+
+}
+.dj{
+  display: block;
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: #f7f5f5;
+  text-align: center;
+  color: #65c8c2;
+  margin-top: 7rpx
+}
+
+
+
+.on{
+  color: #00b26a;
+  border-bottom: 1px solid #00b26a
+}

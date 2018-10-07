@@ -92,6 +92,9 @@ var config = {
   tx: host + '/withdrawal/tx',
   //提现记录列表
   withdrawalList: host + '/withdrawal/withdrawalList',
+  // 分销订单
+  commissionOrders: host + '/commission/commissionOrders',
+  
   
 };
 

@@ -21,7 +21,8 @@
     "pages/team/team",
     "pages/bonus/bonus",
     "pages/push/push",
-    "pages/tx/tx"
+    "pages/tx/tx",
+    "pages/fxdd/fxdd"
   ],
   "window": {
     "backgroundTextStyle": "light",
