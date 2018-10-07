@@ -90,6 +90,8 @@ var config = {
   myConsumeBouns: host + '/commission/myConsumeBouns',
   //提现
   tx: host + '/withdrawal/tx',
+  //提现记录列表
+  withdrawalList: host + '/withdrawal/withdrawalList',
   
 };
 

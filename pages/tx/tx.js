@@ -1,25 +1,69 @@
 // pages/tx/tx.js
+const config = require("../../config.js");
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    TeamIndex: 0
+    active: -1,
+    withdrawalList:[]
   },
   qh(e) {
-    var index = parseInt(e.currentTarget.dataset.index)
-    this.setData({
-      TeamIndex: index
-    })
+    var active = e.currentTarget.dataset.active
+    if (active != this.data.active) {
+      this.setData({
+        active: active,
+        withdrawalList: []
+      })
+      this.getWithdrawal()
+    }
   },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this
+    app.getUserInfo(function () {
+      that.getWithdrawal()
+    });
   },
+  getWithdrawal:function(){
+    var that = this
+    wx.request({
+      url: config.withdrawalList,
+      method: 'get',
+      data: { userId: app.globalData.userInfo.id, status: that.data.active },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        that.setData({
+          withdrawalList: []
+        });
+        var member = res.data.member;
+        var list = res.data.list;
+        var withdrawalList = that.data.withdrawalList
+        if (list) {
+          for (var i = 0; i < list.length; i++) {
+            withdrawalList.push(list[i])
+          }
+        }
+        that.setData({
+          withdrawalList: withdrawalList
+        });
 
+      },
+      fail: function (e) {
+        wx.showToast({
+          title: '网络异常！',
+          duration: 2000
+        });
+      },
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
