@@ -18,7 +18,10 @@
     "pages/toAgent/toAgent",
     "pages/list/list",
     "pages/fx/fx",
-    "pages/team/team"
+    "pages/team/team",
+    "pages/bonus/bonus",
+    "pages/push/push",
+    "pages/tx/tx"
   ],
   "window": {
     "backgroundTextStyle": "light",

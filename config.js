@@ -86,6 +86,10 @@ var config = {
   cartAmount: host + '/cart/cartAmount',
   //我的团队
   myGroup: host + '/commission/myGroup',
+  //消费奖金
+  myConsumeBouns: host + '/commission/myConsumeBouns',
+  //提现
+  tx: host + '/withdrawal/tx',
   
 };
 

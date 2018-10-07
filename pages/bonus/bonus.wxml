@@ -1,12 +1,12 @@
 <!--pages/time/time.wxml-->
 <view>
   <view class='team-one'>
-    <text class='cj'>销售总成绩</text>
+    <text class='cj'>消费奖金</text>
     <text class='pr'>￥{{amount}}</text>
   </view>
   <view class='team-two'>
     <view class='one'>
-      <text class='left'>团队成员</text>
+      <text class='left'>分销商消费奖金</text>
       <view class='right'>
         <text class="{{active == 1 ?'on':''}}" data-active="1" bindtap='qh'>一级</text>
         <text class="{{active == 2 ?'on':''}}" data-active="2" bindtap='qh'>二级</text>
@@ -15,14 +15,20 @@
     </view>
     <view class='two'>
       <view>
-        <view class='two-box'>
-          <view class='two-box-box'  wx:for="{{nextGroup}}">
-
+        <view class='two-box' wx:for="{{commissions}}">
+          <view class='two-box-left'>
             <image src='{{item.headimgurl}}'></image>
-            <text>{{item.nickname}}</text>
-
+          </view>
+          <view class='two-box-con'>
+            <text class='t1'>{{item.nickname}}</text>
+            <!-- <text class='t2'>ID：125623</text> -->
           </view>
 
+          <view class='two-box-right'>
+            <text class='value'>共{{item.totalQuantity}}件商品,总计:￥{{item.reallyPrice}}</text>
+            <text class='time'>{{item.date}}</text>
+            <text class='price'>返佣：￥{{item.agentConsume}}</text>
+          </view>
         </view>
 
       </view>

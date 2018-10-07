@@ -13,7 +13,7 @@
        <!-- <text>邀请吗：33415</text>  -->
     </view>
     <view class='yq'>我的佣金：￥{{member.balance}}</view>
-    <text class='tx'  bindtap='Txian'>申请提现</text>
+    <text class='tx'  bindtap='Txian' wx:if="{{member && member.balance}}">申请提现</text>
   </view>
 
   <view class='fx-2'>
@@ -63,11 +63,11 @@
 </view>
 
 
-<view id='tc'  hidden="{{hiddenName}}" >
+<view id='tc' hidden="{{hiddenName}}" >
   <view class='tc'>
     <text>提现</text>
     <view class='tc-box'>
-      <input  placeholder='提现金额'></input>
+      <input type='digit' placeholder='提现金额' bindblur="inputAmount" value="{{txAmount}}"></input>
       <button catchtap='qdtx'>确认提现</button>
     </view>
     

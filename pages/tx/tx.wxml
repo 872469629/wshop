@@ -1,0 +1,145 @@
+<!--pages/tx/tx.wxml-->
+<view>
+  <view class='tx-one'>
+    <text class="{{TeamIndex == 0 ?'on':''}}" data-index="0" bindtap='qh'>所有提现</text>
+    <text class="{{TeamIndex == 1 ?'on':''}}" data-index="1" bindtap='qh'>待打款</text>
+    <text class="{{TeamIndex == 2 ?'on':''}}" data-index="2" bindtap='qh'>已打款</text>
+    <text class="{{TeamIndex == 3 ?'on':''}}" data-index="3" bindtap='qh'>无效</text>
+  </view>
+  <view class='tx-two'>
+    <view class='tx-two-box' wx:if="{{TeamIndex == 0}}">
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#6db9b5'>待打款</text>
+        </view>
+      </view>
+
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#df817c'>已打款</text>
+        </view>
+      </view>
+
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#6db9b5'>待打款</text>
+        </view>
+      </view>
+
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#df817c'>已打款</text>
+        </view>
+      </view>
+
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#df817c'>已打款</text>
+        </view>
+      </view>
+
+
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color'>无效</text>
+        </view>
+      </view>
+    </view>
+    <view class='tx-two-box' wx:if="{{TeamIndex == 1}}">
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#6db9b5'>待打款</text>
+        </view>
+      </view>
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#6db9b5'>待打款</text>
+        </view>
+      </view>
+    </view>
+    <view class='tx-two-box' wx:if="{{TeamIndex == 2}}">
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#df817c'>已打款</text>
+        </view>
+      </view>
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#df817c'>已打款</text>
+        </view>
+      </view>
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color:#df817c'>已打款</text>
+        </view>
+      </view>
+    </view>
+    <view class='tx-two-box' wx:if="{{TeamIndex == 3}}">
+      <view class='tx-box'>
+        <view class='tx-box-left'>
+          <text class='price'>￥30.00</text>
+          <text class='sxf'>手续费：￥0.20</text>
+        </view>
+        <view class='tx-box-right'>
+          <text class='rq'>2018.08.17 12:00</text>
+          <text class='a' style='color'>无效</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
