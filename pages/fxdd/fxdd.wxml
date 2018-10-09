@@ -12,16 +12,16 @@
     <view class='two'>
       <view>
         <view class='order-two' wx:for="{{orderList}}">
-          <view class='order-two-box'>
+          <view class='order-two-box' wx:for="{{item.orderItems}}" wx:for-item="p">
             <view class='left'>
-              <image src='http://zq2.51wdxh.com/jt-img/sp.png'></image>
+              <image src='{{p.img}}'></image>
             </view>
             <view class='right'>
-              <text class='title'>军太水光气垫bb霜</text>
-              <text class='con'>非常好的水光气垫bb霜，值得推荐</text>
+              <text class='title'>{{p.name}}</text>
+              <text class='con'>{{p.title}}</text>
               <view class='right'>
-                <text class='price'>1100元</text>
-                <text class='value'>x3</text>
+                <text class='price'>{{p.reallyUnitPrice}}元</text>
+                <text class='value'>x{{p.quantity}}</text>
               </view>
             </view>
 
@@ -29,11 +29,12 @@
 
           <view class='bottom'>
             <view class='bottom-1'>
-              共三件商品, 总计:
-              <text style='color:#e2827d'>￥2000.00</text>
+              共{{item.totalQuantity}}件商品, 总计:
+              <text style='color:#e2827d'>￥{{item.reallyPrice}}</text>
             </view>
             <view class='bottom-2'>
-              <text class='pay'>以付款</text>
+              <text class='wfk' wx:if="{{item.isPay=='0'}}">未付款</text>
+              <text class='pay' wx:if="{{item.isPay=='1'}}">已付款</text>
             </view>
             <view class='bottom-3'>
               <view class='bottom-3-image'>
@@ -41,8 +42,10 @@
               </view>
               <view class='bottom-3-box'>
                 <text class='t1'>我的合伙人一号</text>
-                <text class='t2'>ID：125623</text>
-                <text class='dj'>一级</text>
+                <!-- <text class='t2'>ID：125623</text> -->
+                <text class='dj' wx:if="{{item.level=='1'}}">一级</text>
+                <text class='dj' wx:if="{{item.level=='2'}}">二级</text>
+                <text class='dj' wx:if="{{item.level=='3'}}">三级</text>
               </view>
             </view>
 

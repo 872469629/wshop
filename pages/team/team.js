@@ -29,6 +29,28 @@ Page({
     var that = this
     app.getUserInfo(function () {
       that.getGroup()
+      wx.request({
+        url: config.myGroupTotalAmount,
+        method: 'post',
+        data: { userId: app.globalData.userInfo.id },
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        success: function (res) {
+
+          if (res.data.ret == '1') {
+            that.setData({
+              amount: res.data.totalAmount
+            })
+          }
+        },
+        fail: function (e) {
+          wx.showToast({
+            title: '网络异常！',
+            duration: 2000
+          });
+        },
+      })
     });
   },
 
@@ -46,7 +68,6 @@ Page({
           nextGroup: []
         });
         var member = res.data.member;
-        var amount = res.data.amount;
         var nn = res.data.nextGroup;
         var nextGroup = that.data.nextGroup
         if (nn){
@@ -57,11 +78,6 @@ Page({
         that.setData({
           nextGroup: nextGroup
         });
-        if (amount){
-          that.setData({
-            amount: amount
-          });
-        }
         
       },
       fail: function (e) {

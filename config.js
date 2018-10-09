@@ -94,6 +94,8 @@ var config = {
   withdrawalList: host + '/withdrawal/withdrawalList',
   // 分销订单
   commissionOrders: host + '/commission/commissionOrders',
+  //我的团队的总金额
+  myGroupTotalAmount: host + '/commission/myGroupTotalAmount',
   
   
 };

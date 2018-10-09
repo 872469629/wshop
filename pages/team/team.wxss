@@ -74,7 +74,8 @@ page{
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 15rpx 30rpx
+  margin: 15rpx 30rpx;
+  width: 160rpx; 
   
 }
 .two-box image{

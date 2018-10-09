@@ -20,6 +20,11 @@
 
             <image src='{{item.headimgurl}}'></image>
             <text>{{item.nickname}}</text>
+            <text wx:if="{{item.totalConsume}}">消费：¥{{item.totalConsume}}</text>
+            <text wx:else>消费：¥0</text>
+            <text wx:if="{{item.totalPromotion}}">推广：¥{{item.totalPromotion}}</text>
+            <text wx:else>推广：¥0</text>
+            
 
           </view>
 
