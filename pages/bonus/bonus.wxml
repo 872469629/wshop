@@ -26,7 +26,7 @@
 
           <view class='two-box-right'>
             <text class='value'>共{{item.totalQuantity}}件商品,总计:￥{{item.reallyPrice}}</text>
-            <text class='time'>{{item.date}}</text>
+            <!-- <text class='time'>{{item.date}}</text> -->
             <text class='price'>返佣：￥{{item.agentConsume}}</text>
           </view>
         </view>

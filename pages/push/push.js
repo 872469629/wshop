@@ -32,7 +32,7 @@ Page({
       wx.request({
         url: config.myGroupTotalAmount,
         method: 'post',
-        data: { userId: app.globalData.userInfo.id},
+        data: { userId: app.globalData.userInfo.id,type:'1'},
         header: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
