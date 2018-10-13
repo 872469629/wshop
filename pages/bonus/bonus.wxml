@@ -21,7 +21,7 @@
           </view>
           <view class='two-box-con'>
             <text class='t1'>{{item.nickname}}</text>
-            <!-- <text class='t2'>ID：125623</text> -->
+             <text class='t2'>{{item.date}}</text> 
           </view>
 
           <view class='two-box-right'>
