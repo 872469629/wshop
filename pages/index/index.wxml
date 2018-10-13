@@ -69,7 +69,7 @@
           <view class='price-1'>
             <text class='price'>{{item.defaultPrice}}元</text>
           </view>
-          <view class='add-fx' catchtap='GoAdd'>
+          <view class='add-fx' catchtap='GoAdd' wx:if="{{item.isAgentProduct=='1'}}">
             <navigator class="pr" url="/pages/toAgent/toAgent?productId={{item.id}}">成为分销商</navigator>
           </view>
         </view>

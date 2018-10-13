@@ -4,5 +4,7 @@
     <text> 拿两箱面膜即成为代理商
     两个月内需推荐一个代理商，否则取消代理资质</text>
   </view>
+  <navigator class="pr" url="/pages/product/detail?productId={{productId}}">
   <text class='add-two'>成为分销商</text>
+  </navigator>
 </view>
