@@ -158,7 +158,7 @@ recOrder:function(e){
               itemlist2.push(wsAllOrderItem);
             }
           }
-          for (var m = 0; m < wsFinshOrderList.length; m++) {
+          for (var m = 0; m < wsWaitEvaluationOrderList.length; m++) {
             if (wsAllOrderItem.wsOrder.id == wsWaitEvaluationOrderList[m].id) {
               itemlist3.push(wsAllOrderItem);
             }
