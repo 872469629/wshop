@@ -137,13 +137,15 @@ Page({
       url: '../list/list',
     })
   },
-  /*
-  GoAdd(){
+  
+  GoAdd(e){
+    var id = e.currentTarget.dataset.id
+    var title = e.currentTarget.dataset.title
     wx.navigateTo({
-      url: '../add/add',
+      url: '/pages/toAgent/toAgent?productId=' + id + "&title=" + title,
     })
   },
-  */
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -239,6 +239,7 @@ Page({
       data: {
         user_id: app.globalData.userInfo.id,
         skuId: that.data.currentSkuId,
+        quantity: that.data.buynum
       },
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -282,7 +283,7 @@ Page({
     var arrParam = [];
     var item = {};
     item.skuId = that.data.currentSkuId;
-    item.quantity = 1;
+    item.quantity = that.data.buynum;
     item.memberId = app.globalData.userInfo.id;
     arrParam.push(item);
     wx.setStorageSync('wsCartOrder', JSON.stringify(arrParam));

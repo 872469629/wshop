@@ -11,11 +11,27 @@ Page({
     member:''
   },
   onLoad: function () {
+    
+  },
+  onShow: function () {
     var that = this;
-    app.getUserInfo(function(){
-      that.setData({
-        member: app.globalData.userInfo
-      })
+    app.getUserInfo(function () {
+      if (app.globalData.userInfo && app.globalData.userInfo.isAgent && app.globalData.userInfo.isAgent=='1'){
+        that.setData({
+          member: app.globalData.userInfo
+        })
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: '您还不是代理商会员，立刻购物',
+          showCancel: false,
+          success: function (res) {
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
+          }
+        })
+      }
     });
   },
   Txian: function (e) {
