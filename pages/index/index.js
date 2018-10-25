@@ -26,15 +26,15 @@ Page({
     app.getUserInfo(function () {
       that.init();
     });
-    var fromUserId = options.fromUserId    
+    var fromUserId = options.fromUserId
     if (fromUserId){
+      //只有新用户点击了别人分享的首页，才能成为别人的下限
       app.globalData.fromUserId = fromUserId
-      //如果我在登录中就要成为该用户的下限
-      app.getUserInfo(function () {
-        if (app.globalData.userInfo && app.globalData.userInfo.id) {
-          app.util.toBeFromUser(app.globalData.userInfo.id, fromUserId)
-        }
-      });
+      // app.getUserInfo(function () {
+      //   if (app.globalData.userInfo && app.globalData.userInfo.id) {
+      //     app.util.toBeFromUser(app.globalData.userInfo.id, fromUserId)
+      //   }
+      // });
       
     }
   },

@@ -15,24 +15,48 @@ Page({
   },
   onShow: function () {
     var that = this;
-    app.getUserInfo(function () {
-      if (app.globalData.userInfo && app.globalData.userInfo.isAgent && app.globalData.userInfo.isAgent=='1'){
-        that.setData({
-          member: app.globalData.userInfo
-        })
-      }else{
-        wx.showModal({
-          title: '提示',
-          content: '您还不是代理商会员，立刻购物',
-          showCancel: false,
-          success: function (res) {
-            wx.switchTab({
-              url: '/pages/index/index',
-            })
-          }
-        })
-      }
-    });
+      //获取最新用户信息
+      wx.login({
+        success: function (res) {
+          var code = res.code;
+          wx.request({
+            url: config.getWcxUser,
+            method: 'post',
+            data: {
+              code: code
+            },
+            header: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            success: function (res) {
+              var data = res.data;
+              app.globalData.userInfo = data.userInfo;
+              if (app.globalData.userInfo && app.globalData.userInfo.isAgent && app.globalData.userInfo.isAgent == '1') {
+                that.setData({
+                  member: app.globalData.userInfo
+                })
+              } else {
+                wx.showModal({
+                  title: '提示',
+                  content: '您还不是代理商会员，立刻购物',
+                  showCancel: false,
+                  success: function (res) {
+                    wx.switchTab({
+                      url: '/pages/index/index',
+                    })
+                  }
+                })
+              }
+            },
+            fail: function (e) {
+              wx.showToast({
+                title: '网络异常！err:getsessionkeys',
+                duration: 2000
+              });
+            },
+          });
+        }
+      });
   },
   Txian: function (e) {
     this.setData({

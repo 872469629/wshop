@@ -31,11 +31,16 @@ App({
   getUserSessionKey:function(cb,code){
     //用户的订单状态
     var that = this;
+    var fromUserId = that.globalData.fromUserId
+    if (!fromUserId) {
+      fromUserId = ''
+    }
     wx.request({
       url: config.getWcxUser,
       method:'post',
       data: {
-        code: code
+        code: code,
+        fromUserId: fromUserId
       },
       header: {
         'Content-Type':  'application/x-www-form-urlencoded'
