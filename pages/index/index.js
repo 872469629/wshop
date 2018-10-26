@@ -117,7 +117,7 @@ Page({
 
   onShareAppMessage: function () {
     var userId = app.globalData.userInfo.id
-    var path = '/pages/home/home'
+    var path = '/pages/index/index'
     if(userId){
       path += '?fromUserId=' + userId
     }
