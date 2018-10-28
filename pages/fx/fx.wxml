@@ -2,14 +2,14 @@
   <view class='fx-1'>
     <image class='fx-1-img' src='http://zq2.51wdxh.com/jt-img/bj.png'></image>
     <view class='fx-1-box'>
-      <image src='{{member.headimgurl}}'></image>
+      <image src='{{member.headimgurl}}' style='border-radius:65px' ></image>
       <text class='name'>{{member.nickname}}</text>
       <!-- <text class='id'>ID:125623</text> -->
       <!-- <text class='dengji'>三级</text> -->
       <text class='id'>邀请码：{{member.ids}}</text> 
     </view>
     <view class='fx-1-box2'>
-      <text>邀请人：{{member.agentParent.nickname}}</text>
+      <text wx:if="{{member.agentParent && member.agentParent.nickname}}">邀请人：{{member.agentParent.nickname}}</text>
        <!-- <text>邀请吗：33415</text>  -->
     </view>
     <view class='yq'>我的佣金：￥{{member.balance}}</view>

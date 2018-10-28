@@ -27,6 +27,7 @@ Page({
       that.init();
     });
     var fromUserId = options.fromUserId
+    console.log("来源id：", fromUserId)
     if (fromUserId){
       //只有新用户点击了别人分享的首页，才能成为别人的下限
       app.globalData.fromUserId = fromUserId
