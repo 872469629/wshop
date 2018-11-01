@@ -8,6 +8,7 @@ Page({
   data: {
     catId: 0,
     wsProductList: [],
+    active: 'dateDesc'
   },
   GoAdd(){
     wx.navigateTo({
@@ -32,14 +33,18 @@ Page({
     that.setData({
       catId: catId,
     })
+    this.getProds();
+  },
+  getProds:function(){
+    var that = this
     //ajax请求数据
     wx.request({
       url: config.getProdListByCat,
       method: 'post',
       data: {
         user_id: app.globalData.userInfo.id,
-        prodOrderBy: 'createDate',
-        prodCategoryId: catId,
+        prodOrderBy: this.data.active,
+        prodCategoryId: this.data.catId,
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded'
@@ -151,11 +156,43 @@ Page({
   
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  screen: function (e) {
+
+    var that = this
+    var cur = e.currentTarget.dataset.cur;
+    console.log("screen" + cur)
+    var active = that.data.active;
+    if (cur == 'dateDesc') {
+      if (active == 'dateDesc') {
+        active = 'dateAsc'
+      } else if (active == 'dateAsc') {
+        active = 'dateDesc'
+      } else {
+        active = 'dateDesc'
+      }
+    } else if (cur == 'salesDesc') {
+      if (active == 'salesDesc') {
+        active = 'salesAsc'
+      } else if (active == 'salesAsc') {
+        active = 'salesDesc'
+      } else {
+        active = 'salesDesc'
+      }
+    } else if (cur == 'priceDesc') {
+      if (active == 'priceDesc') {
+        active = 'priceAsc'
+      } else if (active == 'priceAsc') {
+        active = 'priceDesc'
+      } else {
+        active = 'priceDesc'
+      }
+    }
+    console.log(active)
+    that.setData({
+      active: active
+    })
+
+    that.getProds()
   },
 
 })

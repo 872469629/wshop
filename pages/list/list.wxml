@@ -1,9 +1,30 @@
 <!--pages/list/list.wxml-->
 <view class='home-box2'>
     <view class='home-box2-1'>
-      <text style='color:#6db9b5'>综合</text>
-      <text>销量</text>
-      <text>价格</text>
+    
+      <view class='zh-box' data-cur="dateDesc" bindtap='screen'>
+        <text wx:if="{{active=='dateDesc'||active=='dateAsc'}}" style='color:#6db9b5'>综合</text> 
+         <text wx:else>综合</text> 
+        <image wx:if="{{active=='dateDesc'}}" src='http://zq2.51wdxh.com/jt-img/x-1.png'></image>
+        <image wx:elif="{{active=='dateAsc'}}" src='http://zq2.51wdxh.com/jt-img/x-12.png'></image>
+        <image wx:else src='http://zq2.51wdxh.com/jt-img/x.png'></image>
+      </view>
+
+      <view class='zh-box' data-cur="salesDesc" bindtap='screen'>
+        <text wx:if="{{active=='salesDesc'||active=='salesAsc'}}" style='color:#6db9b5'>销量</text> 
+        <text wx:else>销量</text> 
+        <image wx:if="{{active=='salesDesc'}}" src='http://zq2.51wdxh.com/jt-img/x-1.png'></image>
+        <image wx:elif="{{active=='salesAsc'}}" src='http://zq2.51wdxh.com/jt-img/x-12.png'></image>
+        <image wx:else src='http://zq2.51wdxh.com/jt-img/x.png'></image>
+      </view>
+
+      <view class='zh-box' data-cur="priceDesc" bindtap='screen'>
+        <text wx:if="{{active=='priceDesc'||active=='priceAsc'}}" style='color:#6db9b5'>价格</text> 
+        <text wx:else>价格</text> 
+        <image wx:if="{{active=='priceDesc'}}" src='http://zq2.51wdxh.com/jt-img/x-1.png'></image>
+        <image wx:elif="{{active=='priceAsc'}}" src='http://zq2.51wdxh.com/jt-img/x-12.png'></image>
+        <image wx:else src='http://zq2.51wdxh.com/jt-img/x.png'></image>
+      </view>
     </view>
 
     <block wx:for="{{wsProductList}}" wx:key="*this" data-id="{{item.id}}">
